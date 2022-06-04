@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(
-              height: 150.0,
+              height: 750.0,
               child: ListView(
                 children: [
                   SizedBox(
@@ -97,24 +97,22 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 100,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
+                        shadowColor: Colors.grey,
+                        child: ListTile(
+                          title: Text('$index'),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 600.0,
-              child: ListView.builder(
-                itemCount: 100,
-                itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    shadowColor: Colors.grey,
-                    child: ListTile(
-                      title: Text('$index'),
-                    ),
-                  );
-                },
-              ),
-            )
           ],
         ),
       ),
